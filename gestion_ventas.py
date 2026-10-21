@@ -14,7 +14,7 @@ def fn_CalcularDescuento_fl(precio_total_fl, tipo_cliente_str):
     """
 
     if tipo_cliente_str == "VIP":
-        precio_final_fl = precio_total_fl * 0.20
+        precio_final_fl = precio_total_fl * 0.80
     elif tipo_cliente_str == "HABITUAL":
         precio_final_fl = precio_total_fl * 0.90
     else:
@@ -61,7 +61,7 @@ def main():
     
     print(f"\n2. Aplicando descuento para cliente de tipo '{tipo_cliente_str}'...")
     total_neto_fl = fn_CalcularDescuento_fl(total_bruto_fl, tipo_cliente_str)
-    print(f"   Total tras descuento: {total_neto_fl:.2f}€ (Valor esperado para 20% dto: {total_bruto_fl * 0.80:.2f}€)")
+    print(f"   Total tras descuento: {total_neto_fl:.2f}€ (Valor esperado para 20% dto: {total_bruto_fl * 0.20:.2f}€)")
     
     print("\n3. Evaluando si se superó el objetivo diario...")
     exito_bool = fn_EvaluarObjetivoDiario_bool(total_neto_fl, objetivo_diario_fl)
